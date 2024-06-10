@@ -166,6 +166,9 @@
 </head>
 
 <body>
+    <div style="color: white; width: 300px; height: 100px; margin-top: 50px;">
+        <img src="https://i.ibb.co/VStWcY4/paid-1.jpg" alt="logo" id="batch" style="width: 300px; height: 100px;">
+    </div>
     <div id="pdf-content" style="padding: 3mm;">
         <div class="c4">
             <div>
@@ -360,10 +363,9 @@
         //------------------------due calculation-------------------------------
         function calculateDue() {
             const total = Number(document.getElementById("total1").innerText);
-            console.log(total);
-            console.log(typeof total);
             const due = total - Number(document.getElementById("advance").value)
             document.getElementById("due").innerHTML = due;
+            showLabel();
         }
         //------------------------dynamic height of textarea-------------------
         const textarea = document.querySelectorAll('.autoResizeTextarea');
@@ -373,6 +375,19 @@
                 this.style.height = this.scrollHeight + 'px';
             })
         })
+        //----------------show label conditionally------------------------------
+        function showLabel() {
+            const due = Number(document.getElementById("due").innerHTML);
+            console.log(due);
+            if (due === 0) {
+                document.getElementById("batch").src = "https://i.ibb.co/VStWcY4/paid-1.jpg"
+
+            }
+            else {
+                document.getElementById("batch").src = "https://i.ibb.co/fnJ0wcX/unpaid-1.jpg";
+            }
+        }
+        showLabel();
     </script>
 </body>
 
