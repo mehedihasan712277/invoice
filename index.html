@@ -166,10 +166,10 @@
 </head>
 
 <body>
-    <div style="color: white; width: 300px; height: 100px; margin-top: 50px;">
-        <img src="https://i.ibb.co/VStWcY4/paid-1.jpg" alt="logo" id="batch" style="width: 300px; height: 100px;">
-    </div>
     <div id="pdf-content" style="padding: 3mm;">
+        <div style="color: white; width: 300px; height: 100px; margin-top: 50px;">
+            <img src="https://i.ibb.co/VStWcY4/paid-1.jpg" alt="logo" id="batch" style="width: 300px; height: 100px;">
+        </div>
         <div class="c4">
             <div>
                 <p class="c1">Invoice</p>
@@ -316,7 +316,7 @@
         function downloadPDF() {
             const element = document.getElementById('pdf-content');
             const opt = {
-                margin: [0, 0, 0, 0],
+                margin: [10, 10, 10, 10],
                 filename: 'invoice.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2, useCORS: true },
